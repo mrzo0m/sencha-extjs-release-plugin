@@ -1,0 +1,43 @@
+apply plugin: 'idea'
+apply plugin: 'groovy'
+apply plugin: 'com.github.mrzo0m.sencha-extjs-release-plugin'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        name "eclipse"
+        url "https://repo.eclipse.org/content/groups/releases"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '5.3.1.201904271842-r'
+    compile 'commons-io:commons-io:2.6'
+    compile 'org.slf4j:slf4j-simple:1.7.26'
+}
+
+
+
+release {
+    features {
+        major = (project.hasProperty("major") && project.major == 'true')
+        revision = (project.hasProperty("revision") && project.revision == 'true')
+        minor = (project.hasProperty("minor") && project.minor == 'true')
+        manual = (project.hasProperty("manual") && project.manual != null) ? project.manual : null
+        minor = (project.hasProperty("enablegit") && project.enablegit == 'true')
+        login  = (project.hasProperty("login") && project.login  != null) ? project.login : null
+        password = (project.hasProperty("password") && project.password  != null) ? project.password : null
+    }
+    println "This is from the build.gradle/project"
+}
+
+task buildAndroidProduction(type: Exec, dependsOn: 'release') {
+    workingDir '.'
+
+    //on windows:
+    commandLine 'cmd', '/c', 'sencha app build production'
+}
