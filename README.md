@@ -31,5 +31,5 @@ For manual version use
 For commit and push changed app.json file use enablegit.
 Possible combine with major, minor e.t.c. 
 
-`>gradlew release -Penablegit=true` 0.0.0.1 to 0.0.0.2 then it run: git add, git pull, git push 
+`>gradlew release -Penablegit=true -Plogin=mygitlogin -Ppassword=mypassword` 0.0.0.1 to 0.0.0.2 then it run: git add, git pull, git push 
   
