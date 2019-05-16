@@ -1,6 +1,6 @@
 {
     "name": "App",
-    "version": "7.0.0.0",
+    "version": "0.10.0.1",
     "indexHtmlPath": "index.html",
     "classpath": [
         "app"
