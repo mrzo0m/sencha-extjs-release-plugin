@@ -5,6 +5,12 @@ Gradle plugin for change extjs app.json version property
 
 `Ext.manifest.version` show version from app.json file
 
+Before start use you should prepare app.json. By default it contains comments like this:
+`/*
+  * This file is ...
+  */`
+Delete all comments like this. **app.json** should be **valid json file**.
+ 
 For example to auto increment build value use 
 
 `>gradlew release` 0.0.0.1 to 0.0.0.2
