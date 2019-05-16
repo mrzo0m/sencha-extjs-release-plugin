@@ -28,7 +28,7 @@ release {
         revision = (project.hasProperty("revision") && project.revision == 'true')
         minor = (project.hasProperty("minor") && project.minor == 'true')
         manual = (project.hasProperty("manual") && project.manual != null) ? project.manual : null
-        minor = (project.hasProperty("enablegit") && project.enablegit == 'true')
+        enablegit = (project.hasProperty("enablegit") && project.enablegit == 'true')
         login  = (project.hasProperty("login") && project.login  != null) ? project.login : null
         password = (project.hasProperty("password") && project.password  != null) ? project.password : null
     }
