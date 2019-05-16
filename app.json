@@ -1,0 +1,156 @@
+{
+    "name": "App",
+    "version": "0.0.3.2",
+    "indexHtmlPath": "index.html",
+    "classpath": [
+        "app"
+    ],
+    "overrides": [
+        "overrides"
+    ],
+    "framework": "ext",
+    "toolkit": "modern",
+    "theme": "coworkee",
+    "requires": [
+        "font-awesome"
+    ],
+    "mashup": {
+        "map": {
+            "options": "?v=3"
+        },
+        "redirect": {
+            "//maps.googleapis.com/maps/api/js{options}": "https://maps.googleapis.com/maps/api/js{options}"
+        }
+    },
+    "fashion": {
+        "inliner": {
+            "enable": false
+        }
+    },
+    "sass": {
+        "namespace": "App",
+        "generated": {
+            "var": "sass/save.scss",
+            "src": "sass/save"
+        },
+        "etc": [
+            "sass/etc/all.scss"
+        ],
+        "var": [
+            "sass/var/all.scss",
+            "sass/var"
+        ],
+        "src": [
+            "sass/src"
+        ]
+    },
+    "js": [
+        {
+            "path": "${framework.dir}/build/ext-modern-all-debug.js"
+        },
+        {
+            "path": "app.js",
+            "bundle": true
+        }
+    ],
+    "css": [
+        {
+            "path": "${build.out.css.path}",
+            "bundle": true,
+            "exclude": [
+                "fashion"
+            ]
+        }
+    ],
+    "loader": {
+        "cache": false,
+        "cacheParam": "_dc"
+    },
+    "production": {
+        "output": {
+            "appCache": {
+                "enable": true,
+                "path": "cache.appcache"
+            }
+        },
+        "loader": {
+            "cache": "${build.timestamp}"
+        },
+        "cache": {
+            "enable": true
+        },
+        "compressor": {
+            "type": "yui"
+        }
+    },
+    "testing": {
+        
+    },
+    "development": {
+        "watch": {
+            "delay": 250
+        }
+    },
+    "builds": {
+        "web": {
+            "default": true
+        },
+        "android": {
+            "packager": "cordova",
+            "cordova": {
+                "config": {
+                    "platforms": "android",
+                    "id": "ru.st.com.mobile",
+                    "name": "MSom"
+                }
+            }
+        }
+    },
+    "bootstrap": {
+        "base": "${app.dir}",
+        "microloader": "bootstrap.js",
+        "css": "bootstrap.css"
+    },
+    "language": {
+        "js": {
+            "input": "ES8",
+            "output": "ES5"
+        }
+    },
+    "compressor": {
+        "polyfills": "auto"
+    },
+    "output": {
+        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+        "appCache": {
+            "enable": false
+        }
+    },
+    "cache": {
+        "enable": false,
+        "deltas": true
+    },
+    "appCache": {
+        "cache": [
+            "index.html"
+        ],
+        "network": [
+            "*"
+        ],
+        "fallback": [
+            
+        ]
+    },
+    "resources": [
+        {
+            "path": "resources",
+            "output": "shared"
+        }
+    ],
+    "archivePath": "archive",
+    "slicer": null,
+    "ignore": [
+        "(^|/)CVS(/?$|/.*?$)"
+    ],
+    "id": "xabeb200-5217-4121-9819-6d7e3a39bf66"
+}
