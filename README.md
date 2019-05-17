@@ -13,14 +13,12 @@ Plugin use jgit to commit and push app.json file into local git repo (workdir is
 
 
 Before start use you should prepare app.json. By default it contains comments like this:
-`
 
 /**
   some comments here
 */
-  
-  `
-Delete all comments like this. **app.json** should be **valid json file**.
+   
+Delete all comments like this. **app.json** should be a **valid json file**.
  
 For example to auto increment build value use 
 
